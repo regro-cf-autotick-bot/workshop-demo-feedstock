@@ -1,13 +1,13 @@
 {% set name = "workshop-demo" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/workshop-demo-{{ version }}.tar.gz
-  sha256: 46b1825fe450cd8070bb41ba28c6c62f92710fd4632d6929c51f61f3d331dce2
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 983c5b38e69d56500897bf75fc089e66d17743cdba5acc22b6ff5ef3cfc138d9
 
 build:
   noarch: python
