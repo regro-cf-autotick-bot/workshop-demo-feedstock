@@ -22,14 +22,16 @@ requirements:
   run:
     - dask-core
     - imagecodecs
+    - magicgui
     - napari
     - napari-plugin-engine >=0.1.4
     - npe2
     - numpy
     - python >=3.7
+    - qtpy
     - scikit-image
     - tifffile
-
+ 
 test:
   imports:
     - workshop_demo
