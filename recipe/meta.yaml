@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 983c5b38e69d56500897bf75fc089e66d17743cdba5acc22b6ff5ef3cfc138d9
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - dask-core
@@ -27,7 +27,7 @@ requirements:
     - napari-plugin-engine >=0.1.4
     - npe2
     - numpy
-    - python >=3.7
+    - python >={{ python_min }}
     - qtpy
     - scikit-image
     - tifffile
@@ -40,6 +40,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/DragaDoncila/workshop-demo
